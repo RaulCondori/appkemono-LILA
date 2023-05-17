@@ -36,7 +36,7 @@ namespace appcomics.Controllers
             var items = from o in _context.DataProforma select o;
             items = items.
                 Include(p => p.Producto).
-                Where(w => w.UserID.Equals(userID) && w.Status.Equals("PENDIENTE"));
+                Where(w => w.UserID.Equals(userID) && w.Status.Equals("PENDIENTEs"));
 
             var carrito = await items.ToListAsync();
             var total = carrito.Sum(c => c.Cantidad * c.Precio);
